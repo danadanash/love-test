@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Test ❤️</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Georgia, serif;
+        background: linear-gradient(135deg, #ffe4ec, #fff5f8);
+        color: #5c2638;
+        padding: 20px;
+    }
+    .card {
+        width: 100%;
+        max-width: 430px;
+        background: rgba(255,255,255,0.94);
+        border-radius: 25px;
+        padding: 35px 25px;
+        text-align: center;
+        box-shadow: 0 10px 35px rgba(120,40,70,0.18);
+    }
+    .heart {
+        font-size: 55px;
+        animation: beat 1.2s infinite;
+    }
+    @keyframes beat {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.15);
+        }
+    }
+    h1 {
+        margin: 10px 0;
+        font-size: 32px;
+    }
+    p {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+    input {
+        width: 100%;
+        padding: 14px;
+        border: 1px solid #e4a7b9;
+        border-radius: 12px;
+        margin: 10px 0;
+        font-size: 16px;
+        outline: none;
+    }
+    button {
+        border: none;
+        background: #b9375d;
+        color: white;
+        padding: 14px 25px;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 12px;
+    }
+    button:hover {
+        background: #922847;
+    }
+    #result {
+        display: none;
+        margin-top: 25px;
+    }
+    .percentage {
+        font-size: 48px;
+        font-weight: bold;
+        color: #b9375d;
+        margin: 10px;
+    }
+    .letter {
+        display: none;
+        text-align: left;
+        margin-top: 25px;
+        padding: 20px;
+        background: #fff1f5;
+        border-radius: 18px;
+        line-height: 1.8;
+        font-size: 16px;
+    }
+    .small {
+        font-size: 13px;
+        opacity: 0.7;
+    }
+</style>
+</head>
+<body>
+<div class="card">
+    <div class="heart">❤️</div>
+    <h1>Love Test</h1>
+    <p>
+        Let's see how strong this love really is...
+    </p>
+    <input id="name1" type="text" placeholder="Your name">
+    <input id="name2" type="text" placeholder="Their name">
+    <button onclick="startTest()">Start the Love Test 💕</button>
+    <div id="result">
+        <p id="names"></p>
+        <div class="percentage" id="percentage"></div>
+        <p id="message"></p>
+        <button onclick="showLetter()">
+            There is something else... 💌
+        </button>
+    </div>
+    <div class="letter" id="letter">
+        <h2>💌 A Little Letter</h2>
+        <p>
+            My favorite person,
+        </p>
+        <p>
+            I don't know if a little love test can really measure
+            what someone means to you, but I wanted to make this
+            little surprise anyway.
+        </p>
+        <p>
+            You are someone who makes ordinary moments feel special,
+            and I'm really grateful for every memory we've made.
+        </p>
+        <p>
+            No percentage could ever properly explain how much
+            someone can mean to you. ❤️
+        </p>
+        <p>
+            So this little website is just a tiny reminder that
+            you are special to me.
+        </p>
+        <p>
+            ❤️ Always remember that.
+        </p>
+        <p>
+            With love,
+            <br>
+            Your favorite person
+        </p>
+    </div>
+    <p class="small">
+        Made with ❤️
+    </p>
+</div>
+<script>
+function startTest() {
+    const name1 = document.getElementById("name1").value.trim();
+    const name2 = document.getElementById("name2").value.trim();
+    if (name1 === "" || name2 === "") {
+        alert("Please enter both names ❤️");
+        return;
+    }
+    document.getElementById("names").innerHTML =
+        name1 + " ❤️ " + name2;
+    // Love-test result
+    document.getElementById("percentage").innerHTML = "100%";
+    document.getElementById("message").innerHTML =
+        "The results are in... You two are meant to make each other smile. 💕";
+    document.getElementById("result").style.display = "block";
+}
+function showLetter() {
+    document.getElementById("letter").style.display = "block";
+    document.getElementById("letter").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+</script>
+</body>
+</html>
